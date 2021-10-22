@@ -51,7 +51,7 @@ public class Vertex {
         while (it.hasNext()) {
             Map.Entry<Vertex,Edge> pair = it.next();
             if (!(pair.getKey().isVisited())){
-                if (!pair.getValue().isIncluded()) {
+                if (!pair.getValue().isIncluded() && !(pair.getValue().isBlocked())) {
                     if (pair.getValue().getWeight() < nextMinimum.getWeight()) {
                         nextMinimum = pair.getValue();
                         nextVertex = pair.getKey();
